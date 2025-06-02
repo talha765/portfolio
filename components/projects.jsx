@@ -121,7 +121,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-20 md:py-32 relative">
+    <section id="projects" className="py-12 md:py-20 relative pb-8 md:pb-16">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
       <div className="container mx-auto px-4 relative z-10">

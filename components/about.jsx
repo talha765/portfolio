@@ -18,7 +18,7 @@ export default function About() {
       role: "Co-Founder & CTO",
       image: "/my_image.jpg?height=350&width=400",
       bio: "MERN stack expert with extensive experience in data science. Passionate about building scalable web applications and deriving insights from complex datasets.",
-      skills: ["React", "Node.js", "MongoDB", "Express", "Data Science", "Python", "TensorFlow"],
+      skills: ["React", "Node.js", "MongoDB", "Express", "Data Science", "Python", "TensorFlow","PyTorch"],
       icon: Code,
     },
     {
@@ -58,7 +58,7 @@ export default function About() {
     <section id="about" className="py-20 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 pt-12 md:pt-24">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -85,44 +85,49 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {founders.map((founder, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 rounded-xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               >
-                <CardContent className="p-8">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="relative mb-6">
-                      <motion.div
-                        className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-400/20 mx-auto"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img
-                          src={founder.image || "/placeholder.svg"}
-                          alt={founder.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    </div>
-
-                    <h4 className="text-2xl font-bold text-white mb-2">{founder.name}</h4>
-                    <p className="text-purple-400 font-medium mb-4">{founder.role}</p>
-                    <p className="text-white/80 mb-6 leading-relaxed">{founder.bio}</p>
-
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {founder.skills.map((skill, skillIndex) => (
-                        <Badge
-                          key={skillIndex}
-                          variant="secondary"
-                          className="bg-purple-600/20 text-purple-200 border-purple-400/20"
+                <Card
+                  className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 rounded-xl"
+                >
+                  <CardContent className="p-8">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="relative mb-6">
+                        <motion.div
+                          className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-400/20 mx-auto"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.3 }}
                         >
-                          {skill}
-                        </Badge>
-                      ))}
+                          <img
+                            src={founder.image || "/placeholder.svg"}
+                            alt={founder.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </motion.div>
+                      </div>
+
+                      <h4 className="text-2xl font-bold text-white mb-2">{founder.name}</h4>
+                      <p className="text-purple-400 font-medium mb-4">{founder.role}</p>
+                      <p className="text-white/80 mb-6 leading-relaxed">{founder.bio}</p>
+
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {founder.skills.map((skill, skillIndex) => (
+                          <Badge
+                            key={skillIndex}
+                            variant="secondary"
+                            className="bg-purple-600/20 text-purple-200 border-purple-400/20"
+                          >
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </motion.div>
