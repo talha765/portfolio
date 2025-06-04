@@ -69,17 +69,17 @@ export default function Contact() {
     <section id="contact" className="">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
-      <div className="container mx-auto px-4 relative z-10 pt-8 md:pt-16 pb-12 md:pb-20">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+      <div className="container mx-auto px-4 relative pt-0 md:pt-0 pb-12 md:pb-20">
+        <div className="text-center mb-0">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-2">
             <Sparkles className="w-4 h-4 text-purple-400 mr-2" />
             <span className="text-sm font-medium text-white">Get In Touch</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent pb-2">
             Let's Work together
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-8">
             Have a project in mind or want to learn more about our services? We'd love to hear from you. Let's create
             something amazing together.
           </p>

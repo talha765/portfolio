@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -19,6 +19,8 @@ export default function Projects() {
     triggerOnce: true,
     threshold: 0.1,
   })
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const buttonRefs = useRef({});
 
   const projects = [
     {
@@ -122,8 +124,37 @@ export default function Projects() {
     prevArrow: <ChevronLeft className="text-white hover:text-purple-400 transition-colors" />,
   }
 
+  useEffect(() => {
+    if (buttonRefs.current[activeFilter]) {
+      const activeButton = buttonRefs.current[activeFilter];
+      setIndicatorStyle({
+        left: activeButton.offsetLeft,
+        width: activeButton.offsetWidth,
+      });
+    }
+  }, [activeFilter]);
+
+  useEffect(() => {
+    const filterIds = filters.map(filter => filter.id);
+    const interval = setInterval(() => {
+      setActiveFilter(prevFilter => {
+        const currentIndex = filterIds.indexOf(prevFilter);
+        const nextIndex = (currentIndex + 1) % filterIds.length;
+        return filterIds[nextIndex];
+      });
+    }, 5000); // Change filter every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
+
+  const handleFilterClick = (filterId) => {
+    setActiveFilter(filterId);
+    // Potentially clear the interval here if you want manual selection to stop auto-moving
+    // clearInterval(interval); // This requires storing interval ID in a ref or state
+  }
+
   return (
-    <section id="projects" className="py-12 md:py-20 relative pb-8 md:pb-16">
+    <section id="projects" className="py-12 md:py-20 relative pb-4 md:pb-8">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -158,16 +189,18 @@ export default function Projects() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex justify-center mb-12"
         >
-          <div className="flex flex-wrap gap-2 p-1 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+          <div className="relative flex flex-wrap gap-2 p-1 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+             <motion.div
+              className="absolute top-1 left-0 h-[calc(100%-8px)] bg-gradient-to-r from-purple-600 to-cyan-600 rounded-md"
+              animate={indicatorStyle}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
             {filters.map((filter) => (
               <button
                 key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                  activeFilter === filter.id
-                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white"
-                    : "text-white/60 hover:text-white hover:bg-white/10"
-                }`}
+                ref={el => buttonRefs.current[filter.id] = el}
+                onClick={() => handleFilterClick(filter.id)}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 relative z-10 ${activeFilter === filter.id ? "text-white" : "text-white/60 hover:text-white"}`}
               >
                 {filter.label}
               </button>
