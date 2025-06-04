@@ -58,28 +58,17 @@ export default function About() {
     <section id="about" className="py-20 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
-      <div className="container mx-auto px-4 relative z-10 pt-12 md:pt-24">
+      <div className="container mx-auto px-4 relative z-10 pt-8 md:pt-16">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-              About Nanobyte
-            </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              We are a cutting-edge tech startup specializing in web development and artificial intelligence solutions.
-              Our mission is to help businesses leverage technology to solve complex problems and drive innovation.
-            </p>
-          </div>
-
           {/* Founders Section */}
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-white mb-4">Meet Our Founders</h3>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Experienced leaders driving innovation in web development and artificial intelligence
             </p>
           </div>
 

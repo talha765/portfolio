@@ -48,7 +48,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-purple-400 blur-lg opacity-20 group-hover:opacity-40 transition-opacity" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                nanobyte
+                Lumen
               </span>
             </Link>
 
@@ -59,13 +59,10 @@ export default function Footer() {
 
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-white/60">
-                <Mail className="h-4 w-4" />
-                <span className="text-sm">contact@nanobyte.tech</span>
+                <Mail className="h-4 w-4 text-white/60" />
+                <span className="text-sm">contact@lumen.tech</span>
               </div>
-              <div className="flex items-center space-x-3 text-white/60">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">+1 (555) 123-4567</span>
-              </div>
+          
               <div className="flex items-center space-x-3 text-white/60">
                 <MapPin className="h-4 w-4" />
                 <span className="text-sm">Silicon Valley, CA</span>
@@ -119,25 +116,10 @@ export default function Footer() {
         {/* Social Links & Newsletter */}
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="flex items-center space-x-6">
-              <span className="text-white/60 text-sm">Follow us:</span>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="w-10 h-10 bg-white/10 hover:bg-gradient-to-r hover:from-purple-600 hover:to-cyan-600 rounded-full flex items-center justify-center transition-all duration-300 group"
-                    aria-label={social.name}
-                  >
-                    <span className="text-white/60 group-hover:text-white text-sm font-medium">{social.icon}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
+            
 
             <div className="text-center md:text-right">
-              <p className="text-white/60 text-sm mb-2">© {currentYear} Nanobyte. All rights reserved.</p>
-              <p className="text-white/40 text-xs">Built with ❤️ and cutting-edge technology</p>
+              <p className="text-white/60 text-sm mb-2">© {currentYear} Lumen. All rights reserved.</p>
             </div>
           </div>
         </div>

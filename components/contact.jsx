@@ -45,14 +45,14 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "contact@nanobyte.tech",
-      link: "mailto:contact@nanobyte.tech",
+      value: "contact@lumen.tech",
+      link: "mailto:contact@lumen.tech",
       description: "Send us an email anytime",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+923214546423",
       link: "tel:+15551234567",
       description: "Mon-Fri from 8am to 6pm",
     },
@@ -76,8 +76,8 @@ export default function Contact() {
             <span className="text-sm font-medium text-white">Get In Touch</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-            Let's Work Together
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+            Let's Work together
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             Have a project in mind or want to learn more about our services? We'd love to hear from you. Let's create
@@ -85,104 +85,9 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-xl">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-white">Send us a message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name" className="text-white/80">
-                        Name
-                      </Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Your name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-purple-400 rounded-md"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-white/80">
-                        Email
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your@email.com"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-purple-400 rounded-md"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-white/80">
-                      Subject
-                    </Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      placeholder="What's this about?"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-purple-400 rounded-md"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-white/80">
-                      Message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your project..."
-                      rows={6}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-purple-400 resize-none rounded-md"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 py-6 text-lg rounded-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="h-5 w-5 mr-2 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-5 w-5 mr-2" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-
+        <div className="grid gap-8">
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-1">
             <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-xl">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-white">Contact Information</CardTitle>
@@ -222,22 +127,7 @@ export default function Contact() {
             </Card>
 
             {/* Social Links */}
-            <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-xl">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-white mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  {["Twitter", "LinkedIn", "GitHub", "Instagram"].map((social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="w-10 h-10 bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors group rounded-xl"
-                    >
-                      <span className="text-white/60 group-hover:text-white text-sm font-medium">{social[0]}</span>
-                    </a>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+         
           </div>
         </div>
       </div>

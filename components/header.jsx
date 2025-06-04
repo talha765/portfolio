@@ -35,7 +35,6 @@ export default function Header() {
 
   const navItems = [
     { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
@@ -58,7 +57,7 @@ export default function Header() {
             <div className="absolute inset-0 bg-purple-400 blur-lg opacity-20 group-hover:opacity-40 transition-opacity" />
           </div>
           <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            nanobyte
+            lumen
           </span>
         </Link>
 

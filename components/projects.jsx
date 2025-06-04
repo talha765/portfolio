@@ -22,88 +22,90 @@ export default function Projects() {
 
   const projects = [
     {
-      id: 1,
-      title: "AI-Powered Customer Support",
+      id: 7,
+      title: "DyslexiAid",
       description:
-        "An intelligent chatbot system that handles customer inquiries using advanced natural language processing and machine learning algorithms.",
+        "An AI-powered application utilizing large language models (LLMs) and MERN stack to provide certified tests and support for children with dyslexia.",
       image: "/placeholder.svg?height=400&width=600",
       category: "ai",
-      tags: ["NLP", "Machine Learning", "React", "Node.js", "OpenAI"],
+      tags: ["LLM", "MERN Stack", "Machine Learning", "React", "Node.js", "MongoDB", "Express"],
       link: "#",
-      github: "#",
+      github: "https://github.com/DyslexiAid-FYP/DyslexiAid_website",
       featured: true,
     },
     {
-      id: 2,
-      title: "E-commerce Platform",
+      id: 8,
+      title: "Student Research Lab",
       description:
-        "A full-featured online shopping platform with payment integration, inventory management, and advanced analytics.",
+        "A full-stack web forum designed for students and educators to share research, discuss academic topics, and collaborate.",
       image: "/placeholder.svg?height=400&width=600",
       category: "web",
-      tags: ["React", "MongoDB", "Express", "Node.js", "Stripe"],
+      tags: ["Full Stack", "React", "Node.js", "Forum"],
       link: "#",
-      github: "#",
-      featured: true,
-    },
-    {
-      id: 3,
-      title: "Data Visualization Dashboard",
-      description:
-        "Interactive dashboard for visualizing complex datasets with customizable charts, filters, and real-time updates.",
-      image: "/placeholder.svg?height=400&width=600",
-      category: "data",
-      tags: ["D3.js", "React", "Python", "Data Science", "PostgreSQL"],
-      link: "#",
-      github: "#",
+      github: "https://github.com/talha765/student-research-lab/tree/talha",
       featured: false,
     },
     {
-      id: 4,
-      title: "Sentiment Analysis Tool",
+      id: 9,
+      title: "Smart Attendance System",
       description:
-        "Advanced tool that analyzes customer feedback and social media mentions to determine sentiment and extract insights.",
+        "Developed a smart attendance system using a Flutter mobile application and deep learning algorithms for automated face recognition and attendance tracking, generating PDF reports.",
       image: "/placeholder.svg?height=400&width=600",
       category: "ai",
-      tags: ["NLP", "Python", "Machine Learning", "TensorFlow"],
-      link: "#",
-      github: "#",
+      tags: ["Deep Learning", "Flutter", "Face Recognition", "Python"],
+      link: "https://github.com/talha765/Smart-Attendance-Project",
+      github: "https://github.com/talha765/Smart-Attendance-Project",
       featured: false,
     },
     {
-      id: 5,
-      title: "Healthcare Management System",
+      id: 10,
+      title: "Time Series Forecasting",
       description:
-        "Comprehensive platform for managing patient records, appointments, medical history, and healthcare analytics.",
+        "Implemented time series forecasting models, including ARIMA and exponential smoothing, using Python to predict environmental factors.",
       image: "/placeholder.svg?height=400&width=600",
-      category: "web",
-      tags: ["React", "MongoDB", "Express", "Node.js", "HIPAA"],
-      link: "#",
-      github: "#",
+      category: "ai",
+      tags: ["Time Series Analysis", "Machine Learning", "ARIMA", "Python"],
+      link: "https://github.com/talha765/Time-Series-Forecasting",
+      github: "https://github.com/talha765/Time-Series-Forecasting",
       featured: false,
     },
     {
-      id: 6,
-      title: "Predictive Analytics Platform",
+      id: 11,
+      title: "Adversarial Attacks and Defenses",
       description:
-        "System that uses historical data and machine learning to predict future trends and business outcomes.",
+        "Investigated adversarial attacks on neural networks using ResNet and developed defense mechanisms to improve model robustness against malicious inputs.",
+      image: "/placeholder.svg?height=400&width=600",
+      category: "ai",
+      tags: ["Deep Learning", "Cybersecurity", "ResNet", "Python"],
+      link: "https://github.com/talha765/Adversarial-Attacks-and-Defenses-in-Neural-Networks",
+      github: "https://github.com/talha765/Adversarial-Attacks-and-Defenses-in-Neural-Networks",
+      featured: false,
+    },
+    {
+      id: 12,
+      title: "EDA on Netflix Dataset",
+      description:
+        "Performed comprehensive Exploratory Data Analysis (EDA) on the Netflix dataset using Python and pandas to identify user behavior and content trends.",
       image: "/placeholder.svg?height=400&width=600",
       category: "data",
-      tags: ["Python", "TensorFlow", "Data Science", "AWS", "Docker"],
-      link: "#",
-      github: "#",
+      tags: ["Data Science", "EDA", "Pandas", "Python"],
+      link: "https://github.com/talha765/EDA_Netflix_Dataset",
+      github: "https://github.com/talha765/EDA_Netflix_Dataset",
       featured: false,
     },
   ]
 
   const filters = [
-    { id: "all", label: "All Projects" },
+    { id: "all", label: "Featured" },
     { id: "web", label: "Web Development" },
     { id: "ai", label: "AI & ML" },
     { id: "data", label: "Data Science" },
   ]
 
   const filteredProjects =
-    activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
+    activeFilter === "all"
+      ? projects.filter((project) => project.featured)
+      : projects.filter((project) => project.category === activeFilter)
 
   const featuredProjects = projects.filter((project) => project.featured)
 
@@ -183,30 +185,25 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
-              className="group bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 overflow-hidden rounded-xl"
+              className="group bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 rounded-xl"
             >
               <div className="relative">
-                <div className="aspect-video overflow-hidden rounded-t-xl">
-                  <LazyLoadImage
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    effect="blur"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
+                {/* Image removed */}
                 {project.featured && (
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-0">Featured</Badge>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Removed gradient overlay */}
               </div>
 
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors">
+              <CardContent className="p-6 flex flex-col h-full">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-200 transition-colors mt-7">
                   {project.title}
                 </h3>
-                <p className="text-white/80 mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-white/80 mb-4 leading-relaxed flex-grow">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
@@ -216,18 +213,18 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 flex-1 rounded-md">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 flex-1 rounded-md"
+                <div className="flex gap-3 mt-auto">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
                   >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Demo
-                  </Button>
+                    <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 w-32 rounded-full">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -241,9 +238,7 @@ export default function Projects() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 px-8 py-3 rounded-full">
-            View All Projects
-          </Button>
+          
         </motion.div>
       </div>
     </section>
