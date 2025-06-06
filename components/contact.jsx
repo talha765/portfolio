@@ -169,35 +169,57 @@ export default function Contact() {
           <div className="space-y-8">
             <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-2xl overflow-hidden">
               <CardHeader className="pb-6">
-                <CardTitle className="text-2xl font-bold text-white flex items-center">
-                  <Send className="w-6 h-6 mr-3 text-purple-400" />
-                  Reach Out To Us
+                <CardTitle className="text-2xl font-bold text-white flex items-center ">
+                  <Users className="w-6 h-6 mr-3 text-purple-400  " />
+                  Connect with Our Founders
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-8">
+         
                 {/* Talha Wajid */}
-                <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center text-white text-2xl font-bold">TW</div> {/* Placeholder for initials or image */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white">Talha Wajid</h3>
-                    <div className="flex space-x-4 mt-2">
-                      <a href="https://www.linkedin.com/in/talha-wajid-02a5b1254/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Linkedin className="w-6 h-6" /></a>
-                      <a href="https://github.com/talha765" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Github className="w-6 h-6" /></a>
+                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 space-x-0 sm:space-x-6 p-5 bg-white/5 rounded-xl">
+                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-purple-400/30 flex-shrink-0">
+                     {/* Placeholder for image or initials */}
+                     <div className="w-full h-full bg-purple-700/50 flex items-center justify-center text-white text-4xl font-bold">TW</div>
+                  </div>
+                  <div className="flex-grow text-center sm:text-left">
+                    <h3 className="text-xl font-bold text-white mb-1">Talha Wajid</h3>
+                    <p className="text-purple-300 text-sm mb-3">Co-Founder & CTO</p>
+                    <ul className="text-white/80 text-sm space-y-1 mb-4">
+                      <li>- MERN Stack Expert</li>
+                      <li>- Data Science & Python</li>
+                      <li>- Scalable Web Applications</li>
+                    </ul>
+                    <div className="flex justify-center sm:justify-start space-x-4">
+                      <a href="https://www.linkedin.com/in/talha-wajid-02a5b1254/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Linkedin className="w-7 h-7" /></a>
+                      <a href="https://github.com/talha765" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Github className="w-7 h-7" /></a>
                     </div>
                   </div>
                 </div>
 
                 {/* Ali Mahmood */}
-                <div className="flex items-center space-x-6">
-                   <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center text-white text-2xl font-bold">AM</div> {/* Placeholder for initials or image */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white">Ali Mahmood</h3>
-                    <div className="flex space-x-4 mt-2">
-                      <a href="https://www.linkedin.com/in/ali-408-mehmood/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Linkedin className="w-6 h-6" /></a>
-                      <a href="https://github.com/Ali4008" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Github className="w-6 h-6" /></a>
+                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 space-x-0 sm:space-x-6 p-4 bg-white/5 rounded-xl ">
+                   <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-cyan-400/30 flex-shrink-0 ">
+                      {/* Placeholder for image or initials */}
+                     <div className="w-full h-full bg-cyan-700/50 flex items-center justify-center text-white text-4xl font-bold">AM</div>
+                   </div>
+                  <div className="flex-grow text-center sm:text-left">
+                    <h3 className="text-xl font-bold text-white mb-1">Ali Mahmood</h3>
+                    <p className="text-cyan-300 text-sm mb-3">Co-Founder & AI Lead</p>
+                    <ul className="text-white/80 text-sm space-y-1 mb-5">
+                      <li>- AI and ML Specialist</li>
+                      <li>- LLMs and NLP</li>
+                      <li>- Intelligent Systems</li>
+                    </ul>
+                    <div className="flex justify-center sm:justify-start space-x-4">
+                      <a href="https://www.linkedin.com/in/ali-408-mehmood/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Linkedin className="w-7 h-7" /></a>
+                      <a href="https://github.com/Ali4008" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors"><Github className="w-7 h-7" /></a>
                     </div>
                   </div>
                 </div>
+
+                {/* General Stats/Highlights related to expertise */}
+               
               </CardContent>
             </Card>
           </div>
